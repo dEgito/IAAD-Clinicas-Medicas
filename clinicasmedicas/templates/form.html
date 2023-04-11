@@ -17,7 +17,7 @@
     </div>
 
     <div class="col-8 m-auto pt-4 pb-2 text-center">
-        <form name="Form" id="form" method="post">
+        <form name="Form" id="form" action="/create/" method="post">
             {% csrf_token %}
             <div class="form-group mt-4">Código da clínica: {{form.CodCli}}</div>
             <div class="form-group mt-4">Nome da clínica: {{form.NomeCli}}</div>
