@@ -1,55 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Clínicas Médicas</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-</head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<body>
-    <div class="col-8 m-auto pt-2 pb-2 text-center">
-        <h1>Clínicas</h1>
+  <body style="width: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+    <nav class="navbar" style="background-color: #002241; color: #ffffff; width: 100%;">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">IAAD: Clínicas Médicas</span>
+      </div>
+    </nav>
+
+    <div class="col-8 m-4 pt-4 pb-2 text-center">
+      <table class="table" style="border: 1px solid #484848;">
+        <thead class="">
+          <tr>
+            <th scope="col">CÓDIGO</th>
+            <th scope="col">CLÍNICA</th>
+            <th scope="col">MÉDICO</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row">1</td>
+            <td>Iaad</td>
+            <td>Dr. Lorem</td>
+          </tr>
+          <tr>
+            <td scope="row">2</td>
+            <td>Jacob</td>
+            <td>Thornton</td>
+          </tr>
+          <tr>
+            <td scope="row">3</td>
+            <td>Larry</td>
+            <td>the Bird</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="col-8 m-auto pt-3 pb-2 text-center">
+        <a href="/form" , class="btn btn-success">Adicionar</a>
+      </div>
     </div>
-
-    <div class="col-8 m-auto pt-3 pb-2 text-center">
-        <a href="/form", class="btn btn-success">Adicionar</a>
-    </div>
-
-    <div class="col-8 m-auto pt-4 pb-2 text-center">
-        <table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Clinica</th>
-      <th scope="col">Medico</th>
-      <th scope="col">Paciente</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-    </table>
-    </div>
-
-
-</body>
-
+  </body>
 </html>
