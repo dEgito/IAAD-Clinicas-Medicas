@@ -59,11 +59,11 @@
             <form name="Form" id="form" action="/create/" method="post">
               {% csrf_token %}
               <div class="mb-3">
-                <label for="codigo" class="form-label">Código:</label>
+                <label for="codigo" class="form-label">Código da clínica: </label> {{form1}}
                 <input type="text" class="form-control" id="codigo" name="codigo" required maxlength="50">
               </div>
               <div class="mb-3">
-                <label for="nome" class="form-label">Nome da clínica:</label>
+                <label for="nome" class="form-label">Nome da clínica:</label> {{form2}}
                 <input type="text" class="form-control" id="nome" name="nome" required maxlength="100">
               </div>
               <div class="mb-3">
@@ -71,11 +71,11 @@
                 <input type="text" class="form-control" id="endereco" name="endereco" required maxlength="200">
               </div>
               <div class="mb-3">
-                <label for="telefone" class="form-label">Telefone:</label>
+                <label for="telefone" class="form-label">Telefone:</label> {{form.telefone_cli}}
                 <input type="text" class="form-control" id="telefone" name="telefone" required maxlength="20">
               </div>
               <div class="mb-3">
-                <label for="email" class="form-label">E-mail:</label>
+                <label for="email" class="form-label">E-mail:</label> {{form.email_cli}}
                 <input type="email" class="form-control" id="email" name="email" required maxlength="100">
               </div>
               <div class="text-center">
