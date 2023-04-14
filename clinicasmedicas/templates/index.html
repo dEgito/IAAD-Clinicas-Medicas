@@ -9,6 +9,43 @@
       integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
       crossorigin="anonymous"
     />
+
+    <style>
+
+body {
+      background-image: url('../templates/background.png');
+      background-size: cover;
+      background-position: center;
+    }
+    .rect-container {
+      display: flex;
+      flex-direction: row; 
+      align-items: center; 
+      justify-content: space-between; 
+      height: 8px;
+    }
+    
+    .rect {
+      width: 25%; 
+      height: 100%; 
+    }
+    
+    .rect-1 {
+      background-color: #87CEEB;
+    }
+    
+    .rect-2 {
+      background-color: #8FBC8F;
+    }
+    
+    .rect-3 {
+      background-color: #FFC0CB;
+    }
+    
+    .rect-4 {
+      background-color: #D3D3D3;
+    }
+  </style>
   </head>
 
   <body style="width: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column;">
@@ -17,38 +54,52 @@
         <span class="navbar-brand mb-0 h1">IAAD: Clínicas Médicas</span>
       </div>
     </nav>
+    <div class="rect-container">
+      <div class="rect rect-1"></div>
+      <div class="rect rect-2"></div>
+      <div class="rect rect-3"></div>
+      <div class="rect rect-4"></div>
+    </div>
 
-    <div class="col-8 m-4 pt-4 pb-2 text-center">
-      <table class="table" style="border: 1px solid #484848;">
-        <thead class="">
+    <div class="container mt-5 flex-direction row">
+      <h2>Clínicas cadastradas</h2>
+  
+      <!-- Tabela com as clínicas -->
+      <table class="table mt-4">
+        <thead>
           <tr>
-            <th scope="col">CÓDIGO</th>
-            <th scope="col">CLÍNICA</th>
-            <th scope="col">MÉDICO</th>
+            <th>Código</th>
+            <th>Clínica</th>
+            <th>Médico</th>
+            <th>Paciente</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td scope="row">1</td>
-            <td>Iaad</td>
-            <td>Dr. Lorem</td>
+            <td>#B0123</td>
+            <td>Clínica A</td>
+            <td>Dr. João</td>
+            <td>Maria</td>
           </tr>
           <tr>
-            <td scope="row">2</td>
-            <td>Jacob</td>
-            <td>Thornton</td>
+            <td>#B0123</td>
+            <td>Clínica B</td>
+            <td>Dra. Ana</td>
+            <td>Paulo</td>
           </tr>
           <tr>
-            <td scope="row">3</td>
-            <td>Larry</td>
-            <td>the Bird</td>
+            <td>#B0123</td>
+            <td>Clínica C</td>
+            <td>Dr. José</td>
+            <td>Luciana</td>
           </tr>
         </tbody>
       </table>
 
-      <div class="col-8 m-auto pt-3 pb-2 text-center">
-        <a href="/form" , class="btn btn-success">Adicionar</a>
+      <div class="mt-4">
+        <a href="/form" class="btn btn-primary">Cadastrar nova clínica</a>
       </div>
+    </div>
     </div>
   </body>
 </html>
