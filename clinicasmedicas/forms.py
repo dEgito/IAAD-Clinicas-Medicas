@@ -3,12 +3,6 @@ from clinicasmedicas.models import *
 
 #Create the form class.
 
-ClinicaEnderecoFormSet = modelformset_factory(
-    EnderecoClinicaForm, Clinica,
-    fields=('cod_end_clinica', 'rua_cli', 'bairro_cli', 'cep_cli', 'numero_end_cli',
-            'cod_cli'),
-    extra=1,
-)
 class EnderecoClinicaForm(ModelForm):
     class Meta:
         model = EnderecoClinica
