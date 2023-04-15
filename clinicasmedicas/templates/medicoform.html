@@ -11,34 +11,6 @@
       a {
         color: #ffffff;
       }
-      .rect-container {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        height: 8px;
-      }
-
-      .rect {
-        width: 25%;
-        height: 100%;
-      }
-
-      .rect-1 {
-        background-color: #87ceeb;
-      }
-
-      .rect-2 {
-        background-color: #8fbc8f;
-      }
-
-      .rect-3 {
-        background-color: #ffc0cb;
-      }
-
-      .rect-4 {
-        background-color: #d3d3d3;
-      }
       form {
         max-width: 500px;
       }
@@ -85,13 +57,14 @@
         </ul>
       </div>
     </nav>
-
-    <div class="rect-container">
-      <div class="rect rect-1"></div>
-      <div class="rect rect-2"></div>
-      <div class="rect rect-3"></div>
-      <div class="rect rect-4"></div>
-    </div>
+    <nav aria-label="breadcrumb" style="width: 100%">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="/" style="color: #002241">Home</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Edição</li>
+      </ol>
+    </nav>
     <div class="container mt-4">
       <div class="container mt-5">
         <h2 class="text-center mb-4">Cadastrar novo médico</h2>
