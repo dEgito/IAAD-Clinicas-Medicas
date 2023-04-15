@@ -20,8 +20,6 @@ class Medico(models.Model):
     email = models.CharField(max_length=40, unique=True)
     cod_espec = models.ForeignKey(Especialidade, on_delete=models.CASCADE)
 
-
-
 class ClinicaMedico(models.Model):
     cod_cli = models.ForeignKey(Clinica, on_delete=models.CASCADE)
     cod_med = models.ForeignKey(Medico, on_delete=models.CASCADE)
