@@ -20,7 +20,7 @@ from clinicasmedicas.views import *
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", home, name="home"),
+    path("home/", home, name="home"),
     path("clinicaform/", criar_clinica, name="clinicaform"),
     path("medicoform/", criar_medico, name="medicoform"),
     path("especialidadeform/", criar_especialidade, name="especialidadeform"),

@@ -11,12 +11,15 @@
     />
 
     <style> 
+      a {
+        color: #ffffff;
+      }
       .rect-container {
         display: flex;
         flex-direction: row; 
         align-items: center; 
         justify-content: space-between; 
-        height: 8px;
+        height: 16px;
       }
       
       .rect {
@@ -43,9 +46,23 @@
   </head>
 
   <body style="width: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column;">
-    <nav class="navbar" style="background-color: #002241; color: #ffffff; width: 100%;">
-      <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">IAAD: Clínicas Médicas</span>
+    <nav class="row navbar navbar-expand-md" style="background-color: #002241; color: #ffffff; width: 100%; display: flex; justify-content: space-between;">
+      <a class="navbar-brand" href="/home">IAAD</a>
+      <div class="collapse navbar-collapse" id="menuCollapse">
+        <ul class="d-flex navbar-nav mr-auto" style="display: flex; gap: 1rem;">
+          <li class="nav-item">
+            <a href="/clinicaform" class="">Cadastrar nova clínica</a>
+          </li>
+          <li class="nav-item">
+            <a href="/medicoform" class="">Cadastrar novo médico</a>
+          </li>
+          <li class="nav-item">
+            <a href="/especialidadeform" class="">Cadastrar nova especialidade</a>
+          </li>
+          <li class="nav-item">
+            <a href="/clinica_medico_form" class="">Associar médico à clínica</a>
+          </li>
+        </ul>
       </div>
     </nav>
     <div class="rect-container">
@@ -57,8 +74,6 @@
 
     <div class="container mt-5 flex-direction row">
       <h2>Clínicas cadastradas</h2>
-  
-      <!-- Tabela com as clínicas -->
       <table class="table mt-4">
         <thead>
           <tr>
@@ -90,21 +105,24 @@
         </tbody>
       </table>
 
-      <div class="mt-4">
-        <a href="/clinicaform" class="btn btn-primary">Cadastrar nova clínica</a>
-      </div>
+      <!-- <div class="btn-group" style="width: 100%; display: flex; flex-direction: row; gap: 1rem;" role="group">
 
-      <div class="mt-4">
-        <a href="/medicoform" class="btn btn-primary">Cadastrar novo médico</a>
-      </div>
-
-      <div class="mt-4">
-        <a href="/especialidadeform" class="btn btn-primary">Cadastrar nova especialidade</a>
-      </div>
-
-      <div class="mt-4">
-        <a href="/clinica_medico_form" class="btn btn-primary">Associar médico à clínica</a>
-      </div>
+        <div class="mt-4">
+          <a href="/clinicaform" class="btn btn-primary">Cadastrar nova clínica</a>
+        </div>
+  
+        <div class="mt-4">
+          <a href="/medicoform" class="btn btn-primary">Cadastrar novo médico</a>
+        </div>
+  
+        <div class="mt-4">
+          <a href="/especialidadeform" class="btn btn-primary">Cadastrar nova especialidade</a>
+        </div>
+  
+        <div class="mt-4">
+          <a href="/clinica_medico_form" class="btn btn-primary">Associar médico à clínica</a>
+        </div>
+      </div> -->
     </div>
     </div>
   </body>

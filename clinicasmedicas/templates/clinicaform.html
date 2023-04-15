@@ -5,6 +5,9 @@
   <title>IAAD - Clínicas médicas</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <style>
+    a{
+      color: #ffffff;
+    }
     .rect-container {
       display: flex;
       flex-direction: row; 
@@ -38,12 +41,26 @@
     }
   </style>
 </head>
-<body>
-  <nav class="navbar" style="background-color: #002241; color: #ffffff; width: 100%;">
-      <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">IAAD: Clínicas Médicas</span>
-      </div>
-    </nav>
+<body style="width: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+  <nav class="row navbar navbar-expand-md" style="background-color: #002241; color: #ffffff; width: 100%; display: flex; justify-content: space-between;">
+    <a class="navbar-brand" href="/home">IAAD</a>
+    <div class="collapse navbar-collapse" id="menuCollapse">
+      <ul class="d-flex navbar-nav mr-auto" style="display: flex; gap: 1rem;">
+        <li class="nav-item">
+          <a href="/clinicaform" class="">Cadastrar nova clínica</a>
+        </li>
+        <li class="nav-item">
+          <a href="/medicoform" class="">Cadastrar novo médico</a>
+        </li>
+        <li class="nav-item">
+          <a href="/especialidadeform" class="">Cadastrar nova especialidade</a>
+        </li>
+        <li class="nav-item">
+          <a href="/clinica_medico_form" class="">Associar médico à clínica</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
     
     <div class="rect-container">
         <div class="rect rect-1"></div>
