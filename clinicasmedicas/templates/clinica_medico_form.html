@@ -29,30 +29,28 @@
       class="row navbar navbar-expand-md"
       style="
         background-color: #002241;
-        color: #ffffff;
         width: 100%;
         display: flex;
         justify-content: space-between;
       "
     >
-      <a class="navbar-brand" href="/">IAAD</a>
-      <div class="collapse navbar-collapse" id="menuCollapse">
-        <ul class="d-flex navbar-nav mr-auto" style="display: flex; gap: 1rem">
-          <li class="nav-item">
-            <a href="/clinicaform" class="">Cadastrar nova clínica</a>
+      <div class="container-fluid">
+        <a class="navbar-brand text-uppercase" href="/">Home</a>
+        <ul
+          class="navbar-nav me-auto mb-2 mb-lg-0"
+          style="display: flex; gap: 3rem"
+        >
+          <li class="nav-item text-uppercase">
+            <a href="/clinicaform" class="">Nova clínica</a>
           </li>
-          <li class="nav-item">
-            <a href="/medicoform" class="">Cadastrar novo médico</a>
+          <li class="nav-item text-uppercase">
+            <a href="/medicoform" class="">Novo médico</a>
           </li>
-          <li class="nav-item">
-            <a href="/especialidadeform" class=""
-              >Cadastrar nova especialidade</a
-            >
+          <li class="nav-item text-uppercase">
+            <a href="/especialidadeform" class="">Nova especialidade</a>
           </li>
-          <li class="nav-item">
-            <a href="/clinica_medico_form" class=""
-              >Associar médico à clínica</a
-            >
+          <li class="nav-item text-uppercase">
+            <a href="/clinica_medico_form" class="">Associar Médico</a>
           </li>
         </ul>
       </div>
@@ -62,7 +60,9 @@
         <li class="breadcrumb-item">
           <a href="/" style="color: #002241">Home</a>
         </li>
-        <li class="breadcrumb-item active" aria-current="page">Associar médico</li>
+        <li class="breadcrumb-item active" aria-current="page">
+          Associar médico
+        </li>
       </ol>
     </nav>
     <div class="container mt-4">
