@@ -26,4 +26,8 @@ urlpatterns = [
     path("especialidadeform/", criar_especialidade, name="especialidadeform"),
     path("clinica_medico_form/", add_clinica_medico, name="clinica_medico_form"),
     path("edit/", edit, name="edit"),
+    path("delete/<int:cod_cli>/", delete_clinica, name="delete"),
+    path("delete/<int:cod_med>/", delete_medico, name="delete"),
+    path("delete/<int:cod_espec>/", delete_especialidade, name="delete"),
+    path("delete/<int:unique_together>/", delete_especialidade, name="delete"),
 ]

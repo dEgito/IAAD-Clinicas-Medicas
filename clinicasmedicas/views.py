@@ -60,3 +60,23 @@ def edit(request):
             form.save()
             return redirect('home')
     return render(request, 'edit.html', {'form': form})
+
+def delete_clinica(request, cod_cli):
+    db = Clinica.objects.get(pk=cod_cli)
+    db.delete()
+    return redirect("home")
+
+def delete_medico(request, cod_med):
+    db = Medico.objects.get(pk=cod_med)
+    db.delete()
+    return redirect("home")
+
+def delete_especialidade(request, cod_espec):
+    db = Especialidade.objects.get(pk=cod_espec)
+    db.delete()
+    return redirect("home")
+
+def delete_meta(request, unique_together):
+    db = ClinicaMedico.Meta.objects.get(pk=unique_together)
+    db.delete()
+    return redirect("home")
