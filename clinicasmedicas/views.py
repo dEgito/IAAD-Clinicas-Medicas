@@ -5,21 +5,43 @@ from clinicasmedicas.forms import *
 def home(request):
     return render(request, "index.html")
 
-def novo_cod_clinica(request):
+def criar_clinica(request):
+    form= ClinicaForm()
     if request.method == 'POST':
-        form_cod = ClinicaForm(request.POST)
-        form_nome = NomeClinicaForm(request.POST)
-        if form_cod.is_valid() and form_nome.is_valid() :
-            form_cod.save()
-            form_nome.save()
-            return redirect('home') # redireciona para a página inicial
-    else:
-        form_cod = ClinicaForm()
-        form_nome = NomeClinicaForm()
-    return render(request, 'clinicaform.html', {'form1': form_cod, 'form2': form_nome})
+        form= ClinicaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    return render(request, 'clinicaform.html', {'form': form})
 
-def create(request):
-    form = ClinicaForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        return redirect("home")
+def criar_medico(request):
+    if request.method == 'POST':
+        form_medico = MedicoForm(request.POST)
+        if form_medico.is_valid():
+            form_medico.save()
+            return redirect('home')
+    else:
+        form_medico = MedicoForm()
+
+    return render(request, 'medicoform.html', {'form': form_medico})
+
+
+def criar_especialidade(request):
+    if request.method == 'POST':
+        form_espec= EspecialidadeForm(request.POST)
+        if form_espec.is_valid():
+            form_espec.save()
+            return redirect('home')
+    else:
+        form_espec= EspecialidadeForm()
+    return render(request, 'especialidadeform.html', {'form': form_espec})
+
+def add_clinica_medico(request):
+    if request.method == 'POST':
+        form_climed = ClinicaMedicoForm(request.POST)
+        if form_climed.is_valid():
+            form_climed.save()
+            return redirect('home')
+    else:
+        form_climed = ClinicaMedicoForm()
+    return render(request, 'clinica_medico_form.html', {'form': form_climed})

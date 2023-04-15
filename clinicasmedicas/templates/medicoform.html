@@ -53,25 +53,28 @@
       </div>
   <div class="container mt-4">
     <div class="container mt-5">
-        <h2 class="text-center mb-4">Cadastrar nova clínica</h2>
+        <h2 class="text-center mb-4">Cadastrar novo médico</h2>
         <div class="row justify-content-center">
           <div class="col-12 col-md-8 col-lg-6">
-            <form name="Form" id="form" action="/clinicaform/" method="post">
+            <form name="Form" id="form" action="/medicoform/" method="post">
               {% csrf_token %}
               <div class="mb-3">
-                 Código da clínica: {{form.cod_cli}}
+                 Código do médico: {{form.cod_med}}
               </div>
               <div class="mb-3">
-                Nome da clínica: {{form.nome_cli}}
+                Nome do médico: {{form.nome_med}}
               </div>
               <div class="mb-3">
-                Endereço da clínica: {{form.endereco}}
+                Gênero: {{form.genero}}
               </div>
               <div class="mb-3">
-                Telefone da clínica: {{form.telefone}}
+                Telefone: {{form.telefone}}
               </div>
               <div class="mb-3">
-                Email da clínica: {{form.email}}
+                Email: {{form.email}}
+              </div>
+              <div class="mb-3">
+                Código da especialidade: {{form.cod_espec}}
               </div>
               <div class="text-center">
                 <button type="submit" class="btn btn-primary">Enviar</button>
