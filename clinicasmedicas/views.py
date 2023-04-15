@@ -1,9 +1,15 @@
 from django.shortcuts import render, redirect
 from clinicasmedicas.forms import *
+from clinicasmedicas.models import Clinica, Especialidade, Medico, ClinicaMedico
 
 # Create your views here.
 def home(request):
-    return render(request, "index.html")
+    data = {}
+    data['clinica'] = Clinica.objects.all()
+    data['especialidade'] = Especialidade.objects.all()
+    data['medico'] = Medico.objects.all()
+    data['clinicamedico'] = ClinicaMedico.objects.all()
+    return render(request, 'index.html', data)
 
 def criar_clinica(request):
     form= ClinicaForm()

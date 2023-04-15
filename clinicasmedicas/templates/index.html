@@ -79,15 +79,17 @@
           </tr>
         </thead>
         <tbody>
+          {% for clinic in clinica %}
           <tr>
-            <td>#B0123</td>
-            <td>Clínica A</td>
-            <td>Av. Lorem Ipsum</td>
-            <td>(81) 9 88887777</td>
-            <td>lorem.contato@gmail.com</td>
+            <td>{{clinic.cod_cli}}</td>
+            <td>{{clinic.nome_cli}}</td>
+            <td>{{clinic.endereco}}</td>
+            <td>{{clinic.telefone}}</td>
+            <td>{{clinic.email}}</td>
             <td><a href="/edit" style="color: #0067c7">Editar</a></td>
             <td><a href="#" style="color: #ff0000">Excluir</a></td>
           </tr>
+          {% endfor %}
           <tr>
             <td>#B0123</td>
             <td>Clínica B</td>
