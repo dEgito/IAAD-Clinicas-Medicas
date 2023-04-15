@@ -45,3 +45,12 @@ def add_clinica_medico(request):
     else:
         form_climed = ClinicaMedicoForm()
     return render(request, 'clinica_medico_form.html', {'form': form_climed})
+
+def edit(request):
+    form= ClinicaForm()
+    if request.method == 'POST':
+        form= ClinicaForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+    return render(request, 'edit.html', {'form': form})

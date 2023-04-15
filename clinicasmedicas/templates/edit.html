@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>IAAD - Clínicas médicas</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .rect-container {
+      display: flex;
+      flex-direction: row; 
+      align-items: center; 
+      justify-content: space-between; 
+      height: 12px;
+    }
+    
+    .rect {
+      width: 25%; 
+      height: 100%; 
+    }
+    
+    .rect-1 {
+      background-color: #87CEEB;
+    }
+    
+    .rect-2 {
+      background-color: #8FBC8F;
+    }
+    
+    .rect-3 {
+      background-color: #FFC0CB;
+    }
+    
+    .rect-4 {
+      background-color: #D3D3D3;
+    }
+    form {
+      max-width: 500px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar" style="background-color: #002241; color: #ffffff; width: 100%;">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">IAAD: Clínicas Médicas</span>
+      </div>
+    </nav>
+    
+    <div class="rect-container">
+        <div class="rect rect-1"></div>
+        <div class="rect rect-2"></div>
+        <div class="rect rect-3"></div>
+        <div class="rect rect-4"></div>
+      </div>
+      
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Edição</li>
+        </ol>
+      </nav>
+      
+      <div class="container mt-4">
+        <div class="container mt-5">
+            <h2 class="text-center mb-4">Editar</h2>
+            <div class="row justify-content-center">
+              <div class="col-12 col-md-8 col-lg-6">
+                <form name="Form" id="form" action="/clinicaform/" method="post">
+                  {% csrf_token %}
+                  <div class="mb-3">
+                     Código da clínica: {{form.cod_cli}}
+                  </div>
+                  <div class="mb-3">
+                    Nome da clínica: {{form.nome_cli}}
+                  </div>
+                  <div class="mb-3">
+                    Endereço da clínica: {{form.endereco}}
+                  </div>
+                  <div class="mb-3">
+                    Telefone da clínica: {{form.telefone}}
+                  </div>
+                  <div class="mb-3">
+                    Email da clínica: {{form.email}}
+                  </div>
+                  <div class="text-center">
+                    <div class="d-flex flex-column justify-content-between gap-3 align-items-center btn-group" role="group">
+                      <button type="submit" class="btn btn-primary btn-block" style="height: 40px;">Salvar</button>
+                      <button type="submit" class="btn btn-primary btn-block"style="background-color: #ff0000; height: 40px;">Deletar registro</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+        </div>
+      </div>
+  <script>
+    function enviarCadastro() {
+      var sucesso = true; 
+      if (sucesso) {
+        alert("Cadastrado com sucesso!");
+      } else {
+        alert("Houve um erro, verifique as informações digitadas.");
+      }
+      event.preventDefault();
+    }
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body
