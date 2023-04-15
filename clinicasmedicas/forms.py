@@ -28,4 +28,4 @@ class MedicoForm(forms.ModelForm):
 class ClinicaMedicoForm(forms.ModelForm):
     class Meta:
         model = ClinicaMedico
-        fields = '__all__'
+        fields = ('cod_cli', 'cod_med', 'data_ingresso', 'carga_horaria_semanal')
