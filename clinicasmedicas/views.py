@@ -14,3 +14,8 @@ def create(request):
     if form.is_valid():
         form.save()
         return redirect("home")
+    
+def edit(request):
+    data = {}
+    data['edit'] = ClinicaForm()
+    return render(request, "edit.html", data)
