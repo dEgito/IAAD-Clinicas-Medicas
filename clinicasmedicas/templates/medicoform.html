@@ -1,95 +1,109 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <title>IAAD - Clínicas médicas</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <style>
-    a {
-      color: #ffffff;
-    }
-    .rect-container {
+  <head>
+    <meta charset="UTF-8" />
+    <title>IAAD - Clínicas médicas</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      a {
+        color: #ffffff;
+      }
+      .rect-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        height: 8px;
+      }
+
+      .rect {
+        width: 25%;
+        height: 100%;
+      }
+
+      .rect-1 {
+        background-color: #87ceeb;
+      }
+
+      .rect-2 {
+        background-color: #8fbc8f;
+      }
+
+      .rect-3 {
+        background-color: #ffc0cb;
+      }
+
+      .rect-4 {
+        background-color: #d3d3d3;
+      }
+      form {
+        max-width: 500px;
+      }
+    </style>
+  </head>
+  <body
+    style="
+      width: 100%;
       display: flex;
-      flex-direction: row; 
-      align-items: center; 
-      justify-content: space-between; 
-      height: 8px;
-    }
-    
-    .rect {
-      width: 25%; 
-      height: 100%; 
-    }
-    
-    .rect-1 {
-      background-color: #87CEEB;
-    }
-    
-    .rect-2 {
-      background-color: #8FBC8F;
-    }
-    
-    .rect-3 {
-      background-color: #FFC0CB;
-    }
-    
-    .rect-4 {
-      background-color: #D3D3D3;
-    }
-    form {
-      max-width: 500px;
-    }
-  </style>
-</head>
-<body style="width: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column;">
-  <nav class="row navbar navbar-expand-md" style="background-color: #002241; color: #ffffff; width: 100%; display: flex; justify-content: space-between;">
-    <a class="navbar-brand" href="/">IAAD</a>
-    <div class="collapse navbar-collapse" id="menuCollapse">
-      <ul class="d-flex navbar-nav mr-auto" style="display: flex; gap: 1rem;">
-        <li class="nav-item">
-          <a href="/clinicaform" class="">Cadastrar nova clínica</a>
-        </li>
-        <li class="nav-item">
-          <a href="/medicoform" class="">Cadastrar novo médico</a>
-        </li>
-        <li class="nav-item">
-          <a href="/especialidadeform" class="">Cadastrar nova especialidade</a>
-        </li>
-        <li class="nav-item">
-          <a href="/clinica_medico_form" class="">Associar médico à clínica</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-    
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    "
+  >
+    <nav
+      class="row navbar navbar-expand-md"
+      style="
+        background-color: #002241;
+        color: #ffffff;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      "
+    >
+      <a class="navbar-brand" href="/">IAAD</a>
+      <div class="collapse navbar-collapse" id="menuCollapse">
+        <ul class="d-flex navbar-nav mr-auto" style="display: flex; gap: 1rem">
+          <li class="nav-item">
+            <a href="/clinicaform" class="">Cadastrar nova clínica</a>
+          </li>
+          <li class="nav-item">
+            <a href="/medicoform" class="">Cadastrar novo médico</a>
+          </li>
+          <li class="nav-item">
+            <a href="/especialidadeform" class=""
+              >Cadastrar nova especialidade</a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="/clinica_medico_form" class=""
+              >Associar médico à clínica</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
     <div class="rect-container">
-        <div class="rect rect-1"></div>
-        <div class="rect rect-2"></div>
-        <div class="rect rect-3"></div>
-        <div class="rect rect-4"></div>
+      <div class="rect rect-1"></div>
+      <div class="rect rect-2"></div>
+      <div class="rect rect-3"></div>
+      <div class="rect rect-4"></div>
     </div>
-  <div class="container mt-4">
-    <div class="container mt-5">
+    <div class="container mt-4">
+      <div class="container mt-5">
         <h2 class="text-center mb-4">Cadastrar novo médico</h2>
         <div class="row justify-content-center">
           <div class="col-12 col-md-8 col-lg-6">
             <form name="Form" id="form" action="/medicoform/" method="post">
               {% csrf_token %}
-              <div class="mb-3">
-                 Código do médico: {{form.cod_med}}
-              </div>
-              <div class="mb-3">
-                Nome do médico: {{form.nome_med}}
-              </div>
-              <div class="mb-3">
-                Gênero: {{form.genero}}
-              </div>
-              <div class="mb-3">
-                Telefone: {{form.telefone}}
-              </div>
-              <div class="mb-3">
-                Email: {{form.email}}
-              </div>
+              <div class="mb-3">Código do médico: {{form.cod_med}}</div>
+              <div class="mb-3">Nome do médico: {{form.nome_med}}</div>
+              <div class="mb-3">Gênero: {{form.genero}}</div>
+              <div class="mb-3">Telefone: {{form.telefone}}</div>
+              <div class="mb-3">Email: {{form.email}}</div>
               <div class="mb-3">
                 Código da especialidade: {{form.cod_espec}}
               </div>
@@ -99,20 +113,21 @@
             </form>
           </div>
         </div>
+      </div>
     </div>
-  </div>
-  <script>
-    function enviarCadastro() {
-      var sucesso = true; 
-      if (sucesso) {
-        alert("Cadastrado com sucesso!");
-      } else {
-        alert("Houve um erro, verifique as informações digitadas.");
+    <script>
+      function enviarCadastro() {
+        var sucesso = true;
+        if (sucesso) {
+          alert("Cadastrado com sucesso!");
+        } else {
+          alert("Houve um erro, verifique as informações digitadas.");
+        }
+        event.preventDefault();
       }
-      event.preventDefault();
-    }
-  </script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
