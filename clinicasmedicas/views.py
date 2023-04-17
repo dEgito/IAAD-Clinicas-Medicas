@@ -76,7 +76,7 @@ def delete_especialidade(request, cod_espec):
     db.delete()
     return redirect("home")
 
-def delete_meta(request, unique_together):
-    db = ClinicaMedico.Meta.objects.get(pk=unique_together)
+def delete_meta(request, id):
+    db = ClinicaMedico.objects.get(pk=id)
     db.delete()
     return redirect("home")
