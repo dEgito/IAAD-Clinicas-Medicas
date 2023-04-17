@@ -70,20 +70,21 @@
         <h2 class="text-center mb-4">Editar</h2>
         <div class="row justify-content-center">
           <div class="col-12 col-md-8 col-lg-6">
-            <form name="Form" id="form" action="/clinicaform/" method="post">
+            <form name="Form" id="form" action="{% if db %}/update_clinica/{{db.cod_cli}}/{%else%}/clinicaform/{% endif %}" method="post">
               {% csrf_token %}
               <div class="mb-3">Código da clínica: {{form.cod_cli}}</div>
               <div class="mb-3">Nome da clínica: {{form.nome_cli}}</div>
               <div class="mb-3">Endereço da clínica: {{form.endereco}}</div>
               <div class="mb-3">Telefone da clínica: {{form.telefone}}</div>
               <div class="mb-3">Email da clínica: {{form.email}}</div>
+              <input type="submit" class="btn btn-success" value="Salvar">
               <div class="text-center">
                 <a href="/">
                   <button type="button" class="btn btn-secondary">
                     Voltar
                   </button>
                 </a>
-                <a href="">
+                <a href="/update_clinica/{{clinic.cod_cli}}">
                   <button type="submit" class="btn btn-primary">
                     Salvar edição
                   </button>

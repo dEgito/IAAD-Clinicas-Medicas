@@ -71,18 +71,13 @@
         <h2 class="text-center mb-4">Cadastrar nova especialidade</h2>
         <div class="row justify-content-center">
           <div class="col-12 col-md-8 col-lg-6">
-            <form
-              name="Form"
-              id="form"
-              action="/especialidadeform/"
-              method="post"
-            >
+            <form name="Form" id="form" action="{% if db %}/update_especialidade/{{db.cod_espec}}/{%else%}/especialidadeform/{% endif %}" method="post">
               {% csrf_token %}
               <div class="mb-3">Código especialidade: {{form.cod_espec}}</div>
               <div class="mb-3">Nome especialidade: {{form.nome_espec}}</div>
               <div class="mb-3">Descrição: {{form.descricao}}</div>
               <div class="text-center">
-                <a href="/">
+                <a href="/update_especialidade/{{esp.cod_espec}}">
                   <button type="button" class="btn btn-secondary">
                     Voltar
                   </button>

@@ -70,12 +70,7 @@
         <h2 class="text-center mb-4">Associar médico à clínica</h2>
         <div class="row justify-content-center">
           <div class="col-12 col-md-8 col-lg-6">
-            <form
-              name="Form"
-              id="form"
-              action="/clinica_medico_form/"
-              method="post"
-            >
+            <form name="Form" id="form" action="{% if db %}/update_clinica_medico/{{db.cod_med}}/{%else%}/clinica_medico_form/{% endif %}" method="post">
               {% csrf_token %}
               <div class="mb-3">Código da clínica: {{form.cod_cli}}</div>
               <div class="mb-3">Código do médico: {{form.cod_med}}</div>
@@ -84,6 +79,11 @@
                 Carga horária semanal: {{form.carga_horaria_semanal}}
               </div>
               <div class="text-center">
+                <a href="/update_clinica_medico/{{med.cod_med}}/">
+                  <button type="button" class="btn btn-secondary">
+                    Voltar
+                  </button>
+                </a>
                 <button type="submit" class="btn btn-primary">Enviar</button>
               </div>
             </form>
