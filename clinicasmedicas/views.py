@@ -94,6 +94,20 @@ def update_medico(request, cod_med):
         form.save()
         return redirect('home')
 
+def edit_clinica_medico(request, id):
+    data = {}
+    data['db'] = ClinicaMedico.objects.get(pk=id)
+    data['form'] = ClinicaMedicoForm(instance=data['db'])
+    return render(request, 'clinica_medico_form.html', data)
+
+def update_clinica_medico(request, id):
+    data = {}
+    data['db'] = ClinicaMedico.objects.get(pk=id)
+    form = ClinicaMedicoForm(request.POST or None, instance=data['db'])
+    if form.is_valid():
+        form.save()
+        return redirect('home')
+
 def delete_clinica(request, cod_cli):
     db = Clinica.objects.get(pk=cod_cli)
     db.delete()
@@ -109,7 +123,7 @@ def delete_especialidade(request, cod_espec):
     db.delete()
     return redirect("home")
 
-def delete_meta(request, unique_together):
-    db = ClinicaMedico.Meta.objects.get(pk=unique_together)
+def delete_meta(request, id):
+    db = ClinicaMedico.objects.get(pk=id)
     db.delete()
     return redirect("home")

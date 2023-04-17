@@ -31,9 +31,10 @@ urlpatterns = [
     path("update_especialidade/<int:cod_espec>/", update_especialidade, name='update_especialidade'),
     path("edit_medico/<int:cod_med>/", edit_medico, name='edit_medico'),
     path("update_medico/<int:cod_med>/", update_medico, name='update_medico'),
-
-    path("delete/<int:cod_cli>/", delete_clinica, name="delete"),
-    path("delete/<int:cod_med>/", delete_medico, name="delete"),
-    path("delete/<int:cod_espec>/", delete_especialidade, name="delete"),
-    path("delete/<int:unique_together>/", delete_meta, name="delete"),
+    path("edit_clinica_medico/<int:cod_cli>/", edit_clinica_medico, name='edit_clinica_medico'),
+    path("update_clinica_medico/<int:cod_cli>/", update_clinica_medico, name='update_clinica_medico'),
+    path("delete_clinica/<int:cod_cli>/", delete_clinica, name="delete_clinica"),
+    path("delete_medico/<int:cod_med>/", delete_medico, name="delete_medico"),
+    path("delete_espec/<int:cod_espec>/", delete_especialidade, name="delete_espec"),
+    path("delete_meta/<int:id>/", delete_meta, name="delete_meta"),
 ]

@@ -119,11 +119,11 @@
             <td>{{med.telefone}}</td>
             <td>{{med.email}}</td>
             <td>{{med.cod_espec}}</td>
-            <td><a href="/edit_medico/{{medico.cod_med}}/" style="color: #0067c7">Editar</a></td>
-            <td><a href="#" style="color: #ff0000">Excluir</a></td>
+            <td><a href="/edit_medico/{{med.cod_med}}/" style="color: #0067c7">Editar</a></td>
+            <td><a href="/delete_medico/{{med.cod_med}}" style="color: #ff0000">Excluir</a></td>
           </tr>
           {% endfor %}
-          
+      
         </tbody>
       </table>
     </div>
@@ -146,8 +146,8 @@
             <td>{{esp.cod_espec}}</td>
             <td>{{esp.nome_espec}}</td>
             <td>{{esp.descricao}}</td>
-            <td><a href="/edit" style="color: #0067c7">Editar</a></td>
-            <td><a href="#" style="color: #ff0000">Excluir</a></td>
+            <td><a href="/edit_especialidade/{{esp.cod_espec}}/" style="color: #0067c7">Editar</a></td>
+            <td><a href="/delete_espec/{{esp.cod_espec}}" style="color: #ff0000">Excluir</a></td>
           </tr>
           {% endfor %}
           
@@ -160,8 +160,9 @@
       <table class="table mt-4">
         <thead>
           <tr>
-            <th>ID Clínica</th>
-            <th>ID Médico</th>
+            <th>*</th>
+            <th>Códico da Clínica</th>
+            <th>Código do Médico</th>
             <th>Data de ingresso</th>
             <th>Carga horária semanal</th>
             <th></th>
@@ -171,12 +172,13 @@
         <tbody>
           {% for climed in clinicamedico %}
           <tr>
+            <td>{{climed.id}}</td>
             <td>{{climed.cod_cli}}</td>
             <td>{{climed.cod_med}}</td>
             <td>{{climed.data_ingresso}}</td>
             <td>{{climed.carga_horaria_semanal}}</td>
-            <td><a href="/edit" style="color: #0067c7">Editar</a></td>
-            <td><a href="#" style="color: #ff0000">Excluir</a></td>
+            <td><a href="/edit_clinica_medico/{{climed.id}}" style="color: #0067c7">Editar</a></td>
+            <td><a href="/delete_meta/{{climed.id}}" style="color: #ff0000">Excluir</a></td>
           </tr>
           {% endfor %}
         </tbody>
