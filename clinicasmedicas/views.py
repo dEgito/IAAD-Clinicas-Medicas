@@ -52,11 +52,16 @@ def add_clinica_medico(request):
         form_climed = ClinicaMedicoForm()
     return render(request, 'clinica_medico_form.html', {'form': form_climed})
 
-def edit(request):
-    form= ClinicaForm()
-    if request.method == 'POST':
-        form= ClinicaForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('home')
-    return render(request, 'edit.html', {'form': form})
+def edit_clinica(request, cod_cli):
+    data = {}
+    data['db'] = Clinica.objects.get(pk=cod_cli)
+    data['form'] = ClinicaForm(instance=data['db'])
+    return render(request, 'clinicaform.html', data)
+
+def update_clinica(request, cod_cli):
+    data = {}
+    data['db'] = Clinica.objects.get(pk=cod_cli)
+    form = ClinicaForm(request.POST or None, instance=data['db'])
+    if form.is_valid():
+        form.save()
+        return redirect('home')

@@ -25,5 +25,6 @@ urlpatterns = [
     path("medicoform/", criar_medico, name="medicoform"),
     path("especialidadeform/", criar_especialidade, name="especialidadeform"),
     path("clinica_medico_form/", add_clinica_medico, name="clinica_medico_form"),
-    path("edit/", edit, name="edit"),
+    path('edit_clinica/<int:cod_cli>/', edit_clinica, name='edit_clinica'),
+    path('update_clinica/<int:cod_cli>/', update_clinica, name='update_clinica'),
 ]
