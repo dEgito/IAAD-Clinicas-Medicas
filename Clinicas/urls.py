@@ -25,6 +25,15 @@ urlpatterns = [
     path("medicoform/", criar_medico, name="medicoform"),
     path("especialidadeform/", criar_especialidade, name="especialidadeform"),
     path("clinica_medico_form/", add_clinica_medico, name="clinica_medico_form"),
-    path('edit_clinica/<int:cod_cli>/', edit_clinica, name='edit_clinica'),
-    path('update_clinica/<int:cod_cli>/', update_clinica, name='update_clinica'),
+    path("edit_clinica/<int:cod_cli>/", edit_clinica, name='edit_clinica'),
+    path("update_clinica/<int:cod_cli>/", update_clinica, name='update_clinica'),
+    path("edit_especialidade/<int:cod_espec>/", edit_especialidade, name='edit_especialidade'),
+    path("update_especialidade/<int:cod_espec>/", update_especialidade, name='update_especialidade'),
+    path("edit_medico/<int:cod_med>/", edit_medico, name='edit_medico'),
+    path("update_medico/<int:cod_med>/", update_medico, name='update_medico'),
+
+    path("delete/<int:cod_cli>/", delete_clinica, name="delete"),
+    path("delete/<int:cod_med>/", delete_medico, name="delete"),
+    path("delete/<int:cod_espec>/", delete_especialidade, name="delete"),
+    path("delete/<int:unique_together>/", delete_meta, name="delete"),
 ]

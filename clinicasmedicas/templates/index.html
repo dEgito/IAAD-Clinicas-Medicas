@@ -63,7 +63,7 @@
         <li class="breadcrumb-item active" aria-current="page">Home</li>
       </ol>
     </nav>
-
+<!--    clinicas        -->
     <div class="container mt-5 flex-direction row">
       <h2>Clínicas cadastradas</h2>
       <table class="table mt-4">
@@ -86,28 +86,99 @@
             <td>{{clinic.endereco}}</td>
             <td>{{clinic.telefone}}</td>
             <td>{{clinic.email}}</td>
-            <td><a href="/edit_clinica/{{clinic.cod_cli}}/" style="color: #0067c7">Editar</a></td>
+            <td><a href="/edit_clinica/{{clinic.cod_cli}}" style="color: #0067c7">Editar</a></td>
+            <td><a href="/delete/{{clinic.cod_cli}}" style="color: #ff0000">Excluir</a></td>
+          </tr>
+          {% endfor %}
+          
+        </tbody>
+      </table>
+    </div>
+   <!-- Medicos  --> 
+    <div class="container mt-5 flex-direction row">
+      <h2>Médicos cadastrados</h2>
+      <table class="table mt-4">
+        <thead>
+          <tr>
+            <th>Código do Médico</th>
+            <th>Nome do Médico</th>
+            <th>Genero</th>
+            <th>Telefone</th>
+            <th>E-mail </th>
+            <th>Código de Especialização</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for med  in medico %}
+          <tr>
+            <td>{{med.cod_med}}</td>
+            <td>{{med.nome_med}}</td>
+            <td>{{med.genero}}</td>
+            <td>{{med.telefone}}</td>
+            <td>{{med.email}}</td>
+            <td>{{med.cod_espec}}</td>
+            <td><a href="/edit_medico/{{medico.cod_med}}/" style="color: #0067c7">Editar</a></td>
             <td><a href="#" style="color: #ff0000">Excluir</a></td>
           </tr>
           {% endfor %}
+          
+        </tbody>
+      </table>
+    </div>
+    <!-- especialidade  -->
+    <div class="container mt-5 flex-direction row">
+      <h2>Especialidades</h2>
+      <table class="table mt-4">
+        <thead>
           <tr>
-            <td>#B0123</td>
-            <td>Clínica B</td>
-            <td>Av. Lorem Ipsum</td>
-            <td>(81) 9 88887777</td>
-            <td>lorem.contato@gmail.com</td>
+            <th>Código da espec</th>
+            <th>Nome_espec</th>
+            <th>Descricao</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for esp in especialidade %}
+          <tr>
+            <td>{{esp.cod_espec}}</td>
+            <td>{{esp.nome_espec}}</td>
+            <td>{{esp.descricao}}</td>
             <td><a href="/edit" style="color: #0067c7">Editar</a></td>
             <td><a href="#" style="color: #ff0000">Excluir</a></td>
           </tr>
+          {% endfor %}
+          
+        </tbody>
+      </table>
+    </div>
+    <!-- Clinica/medico -->
+    <div class="container mt-5 flex-direction row">
+      <h2>Relação Médico Clínica</h2>
+      <table class="table mt-4">
+        <thead>
           <tr>
-            <td>#B0123</td>
-            <td>Clínica C</td>
-            <td>Av. Lorem Ipsum</td>
-            <td>(81) 9 88887777</td>
-            <td>lorem.contato@gmail.com</td>
+            <th>ID Clínica</th>
+            <th>ID Médico</th>
+            <th>Data de ingresso</th>
+            <th>Carga horária semanal</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for climed in clinicamedico %}
+          <tr>
+            <td>{{climed.cod_cli}}</td>
+            <td>{{climed.cod_med}}</td>
+            <td>{{climed.data_ingresso}}</td>
+            <td>{{climed.carga_horaria_semanal}}</td>
             <td><a href="/edit" style="color: #0067c7">Editar</a></td>
             <td><a href="#" style="color: #ff0000">Excluir</a></td>
           </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>

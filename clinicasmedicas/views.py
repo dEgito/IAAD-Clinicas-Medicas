@@ -65,3 +65,51 @@ def update_clinica(request, cod_cli):
     if form.is_valid():
         form.save()
         return redirect('home')
+
+def edit_especialidade(request, cod_espec):
+    data = {}
+    data['db'] = Especialidade.objects.get(pk=cod_espec)
+    data['form'] = EspecialidadeForm(instance=data['db'])
+    return render(request, 'especialidadeform.html', data)
+
+def update_especialidade(request, cod_espec):
+    data = {}
+    data['db'] = Especialidade.objects.get(pk=cod_espec)
+    form = EspecialidadeForm(request.POST or None, instance=data['db'])
+    if form.is_valid():
+        form.save()
+        return redirect('home')
+
+def edit_medico(request, cod_med):
+    data = {}
+    data['db'] = Medico.objects.get(pk=cod_med)
+    data['form'] = MedicoForm(instance=data['db'])
+    return render(request, 'medicoform.html', data)
+
+def update_medico(request, cod_med):
+    data = {}
+    data['db'] = Medico.objects.get(pk=cod_med)
+    form = MedicoForm(request.POST or None, instance=data['db'])
+    if form.is_valid():
+        form.save()
+        return redirect('home')
+
+def delete_clinica(request, cod_cli):
+    db = Clinica.objects.get(pk=cod_cli)
+    db.delete()
+    return redirect("home")
+
+def delete_medico(request, cod_med):
+    db = Medico.objects.get(pk=cod_med)
+    db.delete()
+    return redirect("home")
+
+def delete_especialidade(request, cod_espec):
+    db = Especialidade.objects.get(pk=cod_espec)
+    db.delete()
+    return redirect("home")
+
+def delete_meta(request, unique_together):
+    db = ClinicaMedico.Meta.objects.get(pk=unique_together)
+    db.delete()
+    return redirect("home")
